@@ -1,0 +1,294 @@
+/* =========================
+   GLOBAL RESET
+   Ensures consistent spacing & sizing
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BASE BODY STYLES
+   Dark premium background with depth
+========================= */
+body {
+  background:
+    radial-gradient(
+      circle at top,
+      #121a2f,
+      #0b0f1a 60%
+    );
+  color: #fff;
+}
+
+/* =========================
+   NAVIGATION BAR
+   Overlay-style header on hero
+========================= */
+.nav {
+  position: absolute;           /* Floats over hero section */
+  width: 100%;
+  padding: 30px 12%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;                  /* Keeps nav above hero image */
+}
+
+/* Navigation links */
+.nav a {
+  color: #cfd6ff;
+  margin-left: 28px;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   HERO SECTION
+   Full-screen visual introduction
+========================= */
+.hero {
+  min-height: 100vh;
+  background: url("images/hero-library.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 12%;
+}
+
+/* Gradient overlay for text readability */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(11,15,26,0.4),
+    rgba(11,15,26,0.95)
+  );
+}
+
+/* Hero text container */
+.hero-text {
+  position: relative;           /* Keeps text above overlay */
+  max-width: 620px;
+}
+
+/* Main headline */
+.hero h1 {
+  font-size: 3.8rem;
+  line-height: 1.05;
+}
+
+/* Supporting hero text */
+.hero p {
+  margin-top: 20px;
+  color: #aab2d5;
+}
+
+/* =========================
+   GLOBAL SECTION BEHAVIOR
+   Used for smooth visual transitions
+========================= */
+section {
+  position: relative;
+}
+
+/* Soft fade between sections */
+section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(11,15,26,0),
+    rgba(11,15,26,1)
+  );
+  pointer-events: none;
+}
+
+/* =========================
+   ABOUT SECTION (EDITORIAL)
+   Asymmetrical text + image layout
+========================= */
+.about-editorial {
+  position: relative;
+  padding: 200px 12%;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Text gets more visual weight */
+  background: #0b0f1a;
+  overflow: visible;
+}
+
+/* Text content wrapper */
+.about-content {
+  z-index: 2;                   /* Keeps text above visuals */
+}
+
+/* About headline */
+.about-content h2 {
+  font-size: 2.8rem;
+  line-height: 1.15;
+  margin-top: 20px;
+}
+
+/* About description */
+.about-content p {
+  margin-top: 28px;
+  max-width: 420px;
+  color: #9aa4b2;
+}
+
+/* =========================
+   ABOUT IMAGE
+========================= */
+
+/* Image container */
+.about-visual {
+  position: relative;
+}
+
+/* Campus image block */
+.about-image {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background: url("images/campus.jpg") center / cover no-repeat;
+  border-radius: 28px;
+}
+
+/* Optional dark fade for blending image into background */
+.about-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(11,15,26,0.15),
+    rgba(11,15,26,0.85)
+  );
+  border-radius: inherit;
+}
+
+/* =========================
+   PROGRAMS SECTION
+   Image-driven card layout
+========================= */
+.programs {
+  padding: 160px 12%;
+}
+
+/* Grid layout for program cards */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
+/* Individual program card */
+.program-card {
+  height: 360px;
+  border-radius: 22px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 32px;
+  transition: transform 0.4s ease;
+}
+
+/* Hover lift effect */
+.program-card:hover {
+  transform: translateY(-12px);
+}
+
+/* Program title */
+.program-card h3 {
+  position: relative;
+  z-index: 2;
+}
+
+/* Gradient overlay for readability */
+.program-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(11,15,26,0.85),
+    rgba(11,15,26,0.2)
+  );
+}
+
+/* =========================
+   FINAL STATEMENT / CTA
+   Emotional closing section
+========================= */
+.final-statement {
+  position: relative;
+  min-height: 80vh;
+  background: url("images/final.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 10%;
+}
+
+/* Overlay to darken background image */
+.final-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(11,15,26,0.95),
+    rgba(11,15,26,0.6)
+  );
+}
+
+/* CTA content container */
+.final-content {
+  position: relative;
+  max-width: 700px;
+}
+
+/* Final headline */
+.final-content h2 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+}
+
+/* Final description */
+.final-content p {
+  margin: 28px auto;
+  max-width: 520px;
+}
+
+/* Call-to-action button */
+.cta {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 16px 36px;
+  border-radius: 999px;
+  background: #6c7cff;
+  color: #0b0f1a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* =========================
+   PROGRAM BACKGROUND IMAGES
+========================= */
+.science {
+  background: url("images/science.jpg") center/cover no-repeat;
+}
+
+.computer {
+  background: url("images/computer.jpg") center/cover no-repeat;
+}
+
+.arts {
+  background: url("images/arts.jpg") center/cover no-repeat;
+}
